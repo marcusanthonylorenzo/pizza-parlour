@@ -29,9 +29,11 @@ Pizza.prototype.makeLarge= function(){
 
 
 
+
 //UI Logic
 $(document).ready(function () {
   let cart = [];
+  let prices = [];
   
   //selectors (divs and spaces)
   let addOnsBar = $(".addOnsBar");
@@ -49,40 +51,45 @@ $(document).ready(function () {
   //dynamic HTML creation
   let addOnsPopUp = "<div class='addOns'><a href='#' id='addMarinara'>marinara</a><a href='#' id='addVegan'>veganBase</a><a href='#' id='addSalsaVerde'>salsaVerde</a><a href='#' id='ddMozzarella'>mozzarella</a><a href='#' id='addGranaPadano'>granaPadano</a><a href='#' id='addVeganParm'>veganParmesan</a><a href='#' id='addVeganMozz'>veganMozzarella</a><a href='#' id='addBasil'>basil</a><a href='#' id='addMushroom'>mushroom</a> <a href='#' id='addOysterMush'>oysterMushroom</a><a href='#' id='addPeps'>pepperoni</a><button type='button' id='done'>Done</button></div>";
 
-  //menu card click event
   //(type, size, sauce, cheese, vegetables, meat, salsa) attributes
+
+  //First Menu Item.
   item1.click(function(event) {
     event.preventDefault();
     let newMargherita = new Pizza("Margherita", "Regular", "Marinara", "Mozzarella & Grana Padano", "basil", false, false, 15);
-    cart.push(newMargherita);
     console.log("Added pizza!");
     console.log(cart.length);
 
     //extras pop-up after sending Pizza to cart
     addOnsBar.prepend(addOnsPopUp);
 
-    //add click event and push each extra item to extras.
+  
     let addOnsItems = $(".addOns").find("a");
     let done =  $("#done");
+      //add click event and push each extra item to extras.
     addOnsItems.click(function(event) {
       console.log("clicked");
       event.preventDefault();
       let extrasArray = newMargherita.extras
       extrasArray.push(1);
-      console.log(newMargherita.extras);
-      console.log(newMargherita.length);
-      console.log(newMargherita.price);
     });
     //close bar when done adding extras
     done.click(function(event) {
       event.preventDefault();
       newMargherita.addExtras();
       $(".addOns:first-child").remove();
-      console.log(newMargherita.price);
+      let newPrice = newMargherita.price;
+      prices.push(newPrice);
+      let totalCost = prices.reduce(function(a, b) { return a + b; }, 0);
+      console.log("total cost: ", totalCost);
     });
+    cart.push(newMargherita);
+    console.log(cart);
 
   });
 
+
+  //Second Menu Item.
   item2.click(function(event) {
     event.preventDefault();
     let newPepperoni = new Pizza("Margherita", "Regular", "Marinara", "Mozzarella & Grana Padano", "basil", false, false, 15);
@@ -91,6 +98,8 @@ $(document).ready(function () {
     console.log(cart.length);
   });
 
+
+  //Third Menu Item.
   item3.click(function(event) {
     event.preventDefault();
     let newVegan = new Pizza("Vegan 3-Cheese & Mushroom", "Regular", "Marinara", "Mozzarella & Grana Padano", "basil", false, false, 15);
