@@ -124,6 +124,7 @@ Pizza order? (Array or Object? Can we store collections easier than Arrays to ac
 ### Test notes:
 It's a difficult decision whether we want to give customer many options, or not many at all (my preference). This influences HOW I design the constructor functions, making an open Pizza vs specific constructor objects for Margherita, Pepperoni, and Vegan individually.
 
+
 Describe: Pizza.makeLarge() 
 
 Test: It should increase Pizza.price by int of 5.
@@ -134,6 +135,13 @@ Expected Output: if "Large", Pizza.price = 20. Else Pizza.price = 15.
 Test: It should not apply twice i.e. no "double large".
 Code: if (this.size === "Large"){ return this.size + 5 }; else if (...!== "Large"){ return 15 };
 Expected Output: Pizza.makeLarge(); returns 20 once.
+
+
+Describe: Pizza.addExtras()
+
+Test: It should increase Pizza.price by $3 each per item.
+Code: this.price += convertEx * 3;  (convertEx is the length of extras array = each extra added or removed will push or pop accordingly.)
+Expected Output: If all ingredients checked (11 total items), Pizza.price = $48.
 
 
 Describe: Pizza.addToOrder()
