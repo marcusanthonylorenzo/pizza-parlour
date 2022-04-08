@@ -157,6 +157,6 @@ I chose to push render new objects in the UI Logic, and push them to an array.
 
 ## License
 
-[MIT]()
+[MIT](https://github.com/marcusanthonylorenzo/pizza-parlour/pull/1/commits/42da4cf2fc610984e2a7fa5f8b2813beea4d93a9)
 
 Copyright (c) 2022 _Marcus Padilla_
