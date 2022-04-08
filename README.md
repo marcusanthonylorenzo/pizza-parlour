@@ -2,7 +2,7 @@
 
 #### By _**Marcus Padilla**_
 
-#### __
+#### _This is a barebones site where you can click to build a pizza and get the quantity and total price. If more time, I would show a proper invoice and make each custom pizza clickable and removable. It was my first foray creating objects in JQuery and pushing them to an array_
 
 ## Technologies Used
 
@@ -78,6 +78,7 @@ Create website for pizza company.
 Pizza order? (Array or Object? Can we store collections easier than Arrays to access individual pizza? Never did it before.)
   - [x] let cart = [];
 ### Behaviours/Specs, Interactivity (List of all functions)
+
 - Pizza (Obj)
   - [x] addExtras ingredients tally cost. addExtras()
   - [x] make large size: large ? +$5 : normal; addPizzaCost();
@@ -95,29 +96,27 @@ Pizza order? (Array or Object? Can we store collections easier than Arrays to ac
 
 - UI Input
   - [x] selectors (can you ASSIGN input to object properties to call on later?)
-  - convert to int
-  - assign int value to pizza types and ingredients
-    (divided by type of food):
-    - Ingredients (selector = value);
-      - marinara =
-      - veganBase =
-      - salsaVerde =
+  - [x] convert to int
+  - Ingredients (selector = value);
+    - marinara
+    - veganBase
+    - salsaVerde
 
-      - mozzarella =
-      - granaPadano = 
-      - veganParmesan =
-      - veganMozzarella =
+    - mozzarella
+    - granaPadano
+    - veganParmesan
+    - veganMozzarella
 
-      - basil = 
-      - mushroom =
-      - oysterMushroom =
+    - basil
+    - mushroom
+    - oysterMushroom
 
-      - pepperoni =
+    - pepperoni
 
-    - Pizzas:
-      - Margherita = 100
-      - Pepperoni = 200
-      - Vegan = 400
+  - Pizzas:
+    - Margherita
+    - Pepperoni 
+    - Vegan
 
 - UI Output
   - showListOfPizzas(pizza, pizzaCost) //with individual cost
@@ -133,12 +132,11 @@ It's a difficult decision whether we want to give customer many options, or not 
 Describe: Pizza.makeLarge() 
 
 Test: It should increase Pizza.price by int of 5.
-Code: if (this.size === "Large"){ return this.size + 5 }; else if (...!== "Large"){ return 15 };
-Expected Output: if "Large", Pizza.price = 20. Else Pizza.price = 15.
-("Large" will be the default input string value for Large size, so user will have no other choice but to default between "Large" or not).
+Code: this.size = "Large"; this.price += 5; return this.price;
+Expected Output: if "Large", Pizza.price = 20.
 
 Test: It should not apply twice i.e. no "double large".
-Code: if (this.size === "Large"){ return this.size + 5 }; else if (...!== "Large"){ return 15 };
+Code: $("#lrg").remove();
 Expected Output: Pizza.makeLarge(); returns 20 once.
 
 
@@ -152,10 +150,9 @@ Expected Output: If all ingredients checked (11 total items), Pizza.price = $48.
 Describe: Pizza.addToCart()
 
 Test: Pizza.addToOrder() should select this.pizzaType and push to cart array of standing order.
-Code: addToOrder(<pizza type to go here, but need to give it a value to differentiate between 3 flavors>);
-Expected Output: console:
-
-
+Code: cart.push(newPizza);
+Expected Output: cart = [{new obj}, {new obj}....]
+I chose to push render new objects in the UI Logic, and push them to an array.
 
 
 ## License

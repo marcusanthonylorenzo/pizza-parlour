@@ -6,13 +6,22 @@ body {
 
 a {
   text-decoration: none;
+  color: rgba(0, 0, 0, 0.9);
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  font-size: 16px;
 }
 
 .container {
   display: inline-flex;
 }
 
-.menu, .output{
+.menu{
   margin: 4rem;
   display: flex;
   flex-direction: column;
@@ -24,12 +33,32 @@ a {
   border-style: none solid solid none;
 }
 
-
 .addOns {
   display: flex;
   flex-direction: column;
+  position: fixed;
   justify-content: center;
-  background-color: rgba(255, 255, 255, 0.6);
-  height: 40vh;
-  width: 80vw;
+  left: 1vw;
+  top: 2vh;
+  background-color: rgba(226, 146, 75, 0.837);
+  height: 80vh;
+  width: 15w;
+  padding: 10%;
+  padding-top: 5vh;
+}
+
+.output {
+  display: flex;
+  flex-direction: column;
+  width: 50vw;
+  padding: 10%;
+}
+
+.notes {
+  margin: 10vh;
+  padding-top: 10vh;
+}
+
+#monke {
+  margin-top: 8vh;
 }
