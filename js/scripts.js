@@ -8,14 +8,14 @@ function Pizza(type, size, sauce, cheese, vegetables, meat, salsa) {
   this.meat = false;
   this.salsa = false;
   this.price = 15;
-  this.extras = [1,1,1,1];
+  this.extras = [];
 }
 
 //each checkbox value will push to extras array, uncheck will pop.
 Pizza.prototype.addExtras = function(){
   let extras = this.extras;
   let convertEx = extras.length;
-  console.log(convertEx);
+  // console.log(convertEx);
   this.price += convertEx * 3;
 };
 
@@ -32,13 +32,22 @@ Pizza.prototype.makeLarge= function(){
 //UI Logic
 $(document).ready(function () {
   let cart = [];
+  
+  //selectors (divs and spaces)
+  let addOnsBar = $(".addOnsBar");
+  let addOns = $(".addOns");
 
-  //selectors
+  //selectors (elements)
+  let menu = $(".menu");
   let menucard =  $(".menu-card");
+
   //specific cards
   let item1 = $("#item1");
   let item2 = $("#item2");
   let item3 = $("#item3");
+  
+  //dynamic HTML creation
+  let addOnsPopUp = "<div class='addOns'><a href='#' id='addMarinara'>marinara</a><a href='#' id='addVegan'>veganBase</a><a href='#' id='addSalsaVerde'>salsaVerde</a><a href='#' id='ddMozzarella'>mozzarella</a><a href='#' id='addGranaPadano'>granaPadano</a><a href='#' id='addVeganParm'>veganParmesan</a><a href='#' id='addVeganMozz'>veganMozzarella</a><a href='#' id='addBasil'>basil</a><a href='#' id='addMushroom'>mushroom</a> <a href='#' id='addOysterMush'>oysterMushroom</a><a href='#' id='addPeps'>pepperoni</a><button type='button' id='done'>Done</button></div>";
 
   //menu card click event
   //(type, size, sauce, cheese, vegetables, meat, salsa) attributes
@@ -48,6 +57,29 @@ $(document).ready(function () {
     cart.push(newMargherita);
     console.log("Added pizza!");
     console.log(cart.length);
+
+    //extras pop-up after sending Pizza to cart
+    addOnsBar.prepend(addOnsPopUp);
+
+    //add click event and push each extra item to extras.
+    let addOnsItems = $(".addOns").find("a");
+    let done =  $("#done");
+    addOnsItems.click(function(event) {
+      console.log("clicked");
+      event.preventDefault();
+      let extrasArray = newMargherita.extras
+      extrasArray.push(1);
+      console.log(newMargherita.extras);
+      console.log(newMargherita.length);
+      console.log(newMargherita.price);
+    });
+    //close bar when done adding extras
+    done.click(function(event) {
+      event.preventDefault();
+      newMargherita.addExtras();
+      $(".addOns:first-child").remove();
+      console.log(newMargherita.price);
+    });
 
   });
 
@@ -66,5 +98,6 @@ $(document).ready(function () {
     console.log("Added Vegan!");
     console.log(cart.length);
   });
+
 
 });
