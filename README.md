@@ -41,7 +41,7 @@ Create website for pizza company.
 - User can choose a size (small or large! No in between here.)
 - Program takes user input and outputs final cost (receipt?)
 
-** Everything at our pizza shop - except the dairy cheese - is made IN HOUSE, from the pizza dough to the spiced pizza marinara, to the vegan cheeses. Thank you for supporting local! <Italian hand-gesture for "eat".>
+** Everything at our pizza shop - except the dairy cheese - is made IN HOUSE, from the pizza dough to the spiced pizza marinara salsa, to the vegan cheeses. Thank you for supporting local! <Italian hand-gesture for "eat".>
 
 ### Objects, Properties.
 - Pizza (constructor) x 4 types. Margherita, Pepperoni, Supreme, Vegan 3-Cheese & Mushroom.
@@ -57,11 +57,11 @@ Create website for pizza company.
   - Supreme
     - Marinara Salsa*
     - Mozzarella*
-    - Taleggio
+    - Cheese of the Week (Taleggio or Burrata)
     - Fresh Red Onion
     - Fresh Basil*
     - Sauteed Mushroom*
-    - Fire-roasted Capsicum
+    - Fire-roasted Yellow Capsicum
     - House-cured Habanero and Honey Salami
   - Vegan 3-Cheese & Mushroom (All animal friendly!)
     - Plant-based White Cream Base
@@ -78,25 +78,47 @@ Create website for pizza company.
 - Form? (8:30am: Can I use a JS Object to assign user input values to object properties and then use them throughout the script? A risk I might take...we'll see later.)
 
 ### Collections/Groupings (if any)
-Pizza order?
-### Interactivity/Behaviours and Specs
-- Pizza
-  - add ingredients up to 15 max. addIngredients()
+Pizza order? (Array or Object? Can we store collections easier than Arrays to access individual pizza? Never did it before.)
+  - let cart = [];
+### Behaviours/Specs, Interactivity (List of all functions)
+- Pizza (Obj)
+  - addExtras ingredients up to 15 max. addExtras()
+  - add ingredientsCost + size: large ? +$5 : normal; addPizzaCost();
   - add pizza to order addToOrder()
+  - methods:
+    - let extras = Pizza.addExtras();
+    - let pizzaCost = Pizza.addPizzaCost() { large? +5 };
+    - let addToOrder = Pizza.addToOrder();
 
-- Order
-  - maintain collection receive from addToOrder.
-  - addPizzaCost();
-  - totalPizzaCost();
+- Cart (let cart = [])
+  - maintain collection receive from addToOrder. (Array or Object?)
+  - totalCost = totalPizzaCost();
 
 - UI Input
-  - selectors
+  - selectors (can you ASSIGN input to object properties to call on later?)
   - convert to int
   - assign int value to pizza types and ingredients
-    - Ingredients:
-      - Marinara = 1
-      - Mozzarella = 2
-      - 
+    (divided by type of food):
+    - Ingredients (selector = value);
+      - marinara =
+      - veganBase =
+      - salsaVerde =
+
+      - mozzarella =
+      - granaPadano = 
+      - cheeseOfTheWeek =
+      - veganParmesan =
+      - veganBlue
+
+      - redOnion =
+      - basil = 
+      - mushroom =
+      - oysterMushroom =
+      - capsicum = 
+
+      - pepperoni =
+      - salami =
+
     - Pizzas:
       - Margherita = 100
       - Pepperoni = 200
@@ -104,16 +126,17 @@ Pizza order?
       - Vegan = 400
 
 - UI Output
-  -
+  - showListOfPizzas(pizza, pizzaCost) //with individual cost
+  - showTotalCost (totalCost)  //grand totalCost (we don't tip in Aus?)
 
 
 ## Tests
 
-Describe: 
+Describe: Pizza.addToOrder()
 
-Test: "It should take user input, run for loop and count each individual number up to specified number"
-Code: robotTalk(5);
-Expected Output: (console:) 0, 1, 2, 3, 4, 5 
+Test: Pizza.addToOrder() should select this.pizzaType and push to cart array of standing order.
+Code: addToOrder(<pizza type to go here, but need to give it a value to differentiate between 4 flavors>);
+Expected Output: console: 
 
 
 ## License
