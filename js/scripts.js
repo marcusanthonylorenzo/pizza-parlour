@@ -5,8 +5,8 @@ function Pizza(type, size, sauce, cheese, vegetables, meat, salsa) {
   this.sauce = sauce;
   this.cheese = cheese;
   this.vegetables = vegetables;
-  this.meat = false;
-  this.salsa = false;
+  this.meat = meat;
+  this.salsa = salsa;
   this.price = 15;
   this.extras = [];
 }
@@ -29,11 +29,11 @@ Pizza.prototype.makeLarge= function(){
 
 
 
-
 //UI Logic
 $(document).ready(function () {
   let cart = [];
   let prices = [];
+  let totalCost;
   
   //selectors (divs and spaces)
   let addOnsBar = $(".addOnsBar");
@@ -56,23 +56,22 @@ $(document).ready(function () {
   //First Menu Item.
   item1.click(function(event) {
     event.preventDefault();
-    let newMargherita = new Pizza("Margherita", "Regular", "Marinara", "Mozzarella & Grana Padano", "basil", false, false, 15);
+    let newMargherita = new Pizza("Margherita", "Regular", "Marinara", "Mozzarella & Grana Padano", "Basil", "None", "None", 15);
     console.log("Added pizza!");
-    console.log(cart.length);
 
     //extras pop-up after sending Pizza to cart
     addOnsBar.prepend(addOnsPopUp);
-
-  
     let addOnsItems = $(".addOns").find("a");
     let done =  $("#done");
-      //add click event and push each extra item to extras.
+
+    //add click event and push each extra item to extras.
     addOnsItems.click(function(event) {
       console.log("clicked");
       event.preventDefault();
       let extrasArray = newMargherita.extras
-      extrasArray.push(1);
+      extrasArray.push();
     });
+
     //close bar when done adding extras
     done.click(function(event) {
       event.preventDefault();
@@ -80,21 +79,46 @@ $(document).ready(function () {
       $(".addOns:first-child").remove();
       let newPrice = newMargherita.price;
       prices.push(newPrice);
-      let totalCost = prices.reduce(function(a, b) { return a + b; }, 0);
+      totalCost = prices.reduce(function(a, b) { return a + b; }, 0);
       console.log("total cost: ", totalCost);
+      console.log(cart);
     });
     cart.push(newMargherita);
-    console.log(cart);
-
+    console.log(cart.length);
   });
 
 
   //Second Menu Item.
   item2.click(function(event) {
     event.preventDefault();
-    let newPepperoni = new Pizza("Margherita", "Regular", "Marinara", "Mozzarella & Grana Padano", "basil", false, false, 15);
+    let newPepperoni = new Pizza("Pepperoni", "Regular", "Marinara", "Mozzarella", "None", "House-cured Pepperoni", "Yes", 15);
+    console.log("Added pizza!");
+
+    //extras pop-up after sending Pizza to cart
+    addOnsBar.prepend(addOnsPopUp);
+    let addOnsItems = $(".addOns").find("a");
+    let done =  $("#done");
+
+    //add click event and push each extra item to extras.
+    addOnsItems.click(function(event) {
+      console.log("clicked");
+      event.preventDefault();
+      let extrasArray = newPepperoni.extras
+      extrasArray.push(1);
+    });
+
+    //close bar when done adding extras
+    done.click(function(event) {
+      event.preventDefault();
+      newPepperoni.addExtras();
+      $(".addOns:first-child").remove();
+      let newPrice = newPepperoni.price;
+      prices.push(newPrice);
+      totalCost = prices.reduce(function(a, b) { return a + b; }, 0);
+      console.log("total cost: ", totalCost);
+      console.log(cart);
+    });
     cart.push(newPepperoni);
-    console.log("Added Peps!");
     console.log(cart.length);
   });
 
@@ -102,9 +126,34 @@ $(document).ready(function () {
   //Third Menu Item.
   item3.click(function(event) {
     event.preventDefault();
-    let newVegan = new Pizza("Vegan 3-Cheese & Mushroom", "Regular", "Marinara", "Mozzarella & Grana Padano", "basil", false, false, 15);
+    let newVegan = new Pizza("Pepperoni", "Regular", "Marinara", "Mozzarella", "None", "House-cured Pepperoni", "Yes", 15);
+    console.log("Added pizza!");
+
+    //extras pop-up after sending Pizza to cart
+    addOnsBar.prepend(addOnsPopUp);
+    let addOnsItems = $(".addOns").find("a");
+    let done =  $("#done");
+
+    //add click event and push each extra item to extras.
+    addOnsItems.click(function(event) {
+      console.log("clicked");
+      event.preventDefault();
+      let extrasArray = newVegan.extras
+      extrasArray.push(1);
+    });
+
+    //close bar when done adding extras
+    done.click(function(event) {
+      event.preventDefault();
+      newVegan.addExtras();
+      $(".addOns:first-child").remove();
+      let newPrice = newVegan.price;
+      prices.push(newPrice);
+      totalCost = prices.reduce(function(a, b) { return a + b; }, 0);
+      console.log("total cost: ", totalCost);
+      console.log(cart);
+    });
     cart.push(newVegan);
-    console.log("Added Vegan!");
     console.log(cart.length);
   });
 

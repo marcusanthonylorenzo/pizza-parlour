@@ -76,7 +76,7 @@ Create website for pizza company.
 
 ### Collections/Groupings (if any)
 Pizza order? (Array or Object? Can we store collections easier than Arrays to access individual pizza? Never did it before.)
-  - let cart = [];
+  - [x] let cart = [];
 ### Behaviours/Specs, Interactivity (List of all functions)
 - Pizza (Obj)
   - [x] addExtras ingredients tally cost. addExtras()
@@ -89,7 +89,7 @@ Pizza order? (Array or Object? Can we store collections easier than Arrays to ac
 
 - Cart (let cart = [])
   - maintain collection receive from addToOrder. (Array or Object?)
-  - totalCost = totalPizzaCost()
+  - [x] totalCost = totalPizzaCost()
   - methods:
     -let totalCost = totalPizzaCost();
 
