@@ -14,6 +14,11 @@
 * VSCode
 
 ## Description
+**My primary objectives** outside of the prompt were:
+- To use Arrays and Objects in synchrony; to store objects in arrays and vice versa.
+- To use click events to create new instances of Objects.
+- To not use global variables, within ability.
+
 I create each individual project without copying and pasting from the coursework, as to struggle but **reinforce** the principles being used. I fear I will need to do more resubs in the future, but I am proud to complete tasks on my own regard.
 
 **My ultimate objective was** to not just use OOP JS, but to improve my workflow, my design patterns, **planning**, **TDD**, and cleaner code in general.
@@ -76,7 +81,7 @@ Pizza order? (Array or Object? Can we store collections easier than Arrays to ac
 - Pizza (Obj)
   - [x] addExtras ingredients tally cost. addExtras()
   - [x] make large size: large ? +$5 : normal; addPizzaCost();
-  - add pizza to order addToOrder()
+  - [x] add pizza to order addToOrder() **Done via UI Logic**
   - methods:
     - let extras = Pizza.addExtras();
     - let pizzaCost = Pizza.makeLarge() { large? +5 };
@@ -89,7 +94,7 @@ Pizza order? (Array or Object? Can we store collections easier than Arrays to ac
     -let totalCost = totalPizzaCost();
 
 - UI Input
-  - selectors (can you ASSIGN input to object properties to call on later?)
+  - [x] selectors (can you ASSIGN input to object properties to call on later?)
   - convert to int
   - assign int value to pizza types and ingredients
     (divided by type of food):

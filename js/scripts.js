@@ -1,5 +1,5 @@
 // //Business Logic
-function Pizza(type, size, sauce, cheese, vegetables, meat, salsa, price) {
+function Pizza(type, size, sauce, cheese, vegetables, meat, salsa) {
   this.type = type;
   this.size = size;
   this.sauce = sauce;
@@ -26,29 +26,45 @@ Pizza.prototype.makeLarge= function(){
     return this.price = 15;
   }
 };
-Pizza.prototype.addToCart = function(){
-
-};
-
-//test objects
-let marg = new Pizza("Margherita", "Large", "Marinara", 2, "basil", false, false, 15);
-let pepperoniPizza = new Pizza("Pepperoni")
-console.log(marg);
-
-//create new object function
 
 
 
 //UI Logic
 $(document).ready(function () {
+  let cart = [];
+
   //selectors
-  let 
+  let menucard =  $(".menu-card");
+  //specific cards
+  let item1 = $("#item1");
+  let item2 = $("#item2");
+  let item3 = $("#item3");
 
   //menu card click event
-  $(".menu-card").click(function(event) {
+  //(type, size, sauce, cheese, vegetables, meat, salsa) attributes
+  item1.click(function(event) {
     event.preventDefault();
-    console.log("clicked");
+    let newMargherita = new Pizza("Margherita", "Regular", "Marinara", "Mozzarella & Grana Padano", "basil", false, false, 15);
+    cart.push(newMargherita);
+    console.log("Added pizza!");
+    console.log(cart.length);
 
+  });
+
+  item2.click(function(event) {
+    event.preventDefault();
+    let newPepperoni = new Pizza("Margherita", "Regular", "Marinara", "Mozzarella & Grana Padano", "basil", false, false, 15);
+    cart.push(newPepperoni);
+    console.log("Added Peps!");
+    console.log(cart.length);
+  });
+
+  item3.click(function(event) {
+    event.preventDefault();
+    let newVegan = new Pizza("Vegan 3-Cheese & Mushroom", "Regular", "Marinara", "Mozzarella & Grana Padano", "basil", false, false, 15);
+    cart.push(newVegan);
+    console.log("Added Vegan!");
+    console.log(cart.length);
   });
 
 });

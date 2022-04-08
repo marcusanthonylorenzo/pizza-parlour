@@ -8,14 +8,18 @@ a {
   text-decoration: none;
 }
 
-.menu {
-  margin: 7rem;
+.container {
+  display: inline-flex;
+}
+
+.menu, .output{
+  margin: 4rem;
   display: flex;
   flex-direction: column;
 }
 
 .menu-card {
   width: 250px;
-  height: 100px;
+  padding: 1rem;
   border-style: none solid solid none;
 }
