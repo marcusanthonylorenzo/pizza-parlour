@@ -74,8 +74,8 @@ Pizza order? (Array or Object? Can we store collections easier than Arrays to ac
   - let cart = [];
 ### Behaviours/Specs, Interactivity (List of all functions)
 - Pizza (Obj)
-  - addExtras ingredients up to 11 max. addExtras()
-  - make large size: large ? +$5 : normal; addPizzaCost();
+  - [x] addExtras ingredients tally cost. addExtras()
+  - [x] make large size: large ? +$5 : normal; addPizzaCost();
   - add pizza to order addToOrder()
   - methods:
     - let extras = Pizza.addExtras();
@@ -144,11 +144,13 @@ Code: this.price += convertEx * 3;  (convertEx is the length of extras array = e
 Expected Output: If all ingredients checked (11 total items), Pizza.price = $48.
 
 
-Describe: Pizza.addToOrder()
+Describe: Pizza.addToCart()
 
 Test: Pizza.addToOrder() should select this.pizzaType and push to cart array of standing order.
 Code: addToOrder(<pizza type to go here, but need to give it a value to differentiate between 3 flavors>);
-Expected Output: console: 
+Expected Output: console:
+
+
 
 
 ## License
