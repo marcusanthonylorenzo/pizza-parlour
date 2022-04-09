@@ -37,7 +37,7 @@ I create each individual project without copying and pasting from the coursework
 
 ## Known Bugs
 
-* None at current time.
+* Amongst many surely hiding in my program, the extra ingredients are clickable but do not respond...therefore it will be easy to mistakenly click more.
 
 ## Design Plan
 
