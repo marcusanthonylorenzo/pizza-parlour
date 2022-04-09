@@ -2,7 +2,7 @@
 
 #### By _**Marcus Padilla**_
 
-#### _This is a barebones site where you can click to build a pizza and get the quantity and total price. If more time, I would show a proper invoice and make each custom pizza clickable and removable. It was my first foray creating objects in JQuery and pushing them to an array_
+#### _This is a barebones site where you can click to build a pizza and get the quantity and total price. If more time, I would show a proper invoice and make each custom pizza clickable and removable. It was my first foray creating objects in JQuery and pushing them to an array. I placed a BIG emphasis on planning out my README and TDD first...albeit a small one today. I REALLY want to be a "clean" and organized programmer, above all._
 
 ## Technologies Used
 
